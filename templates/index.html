@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel Line Assay</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Parallel Line Assay</h1>
+    <div class="container">
+        <div id="group1-container">
+            <h2>Group 1 Data</h2>
+            <table id="group1-table" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Dose</th>
+                        <th>Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="text" class="dose" /></td><td><input type="text" class="response" /></td></tr>
+                    <tr><td><input type="text" class="dose" /></td><td><input type="text" class="response" /></td></tr>
+                    <tr><td><input type="text" class="dose" /></td><td><input type="text" class="response" /></td></tr>
+                </tbody>
+            </table>
+            <button id="add-row-group1" type="button">Add Row to Group 1</button>
+        </div>
+        <div id="group2-container">
+            <h2>Group 2 Data</h2>
+            <table id="group2-table" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Dose</th>
+                        <th>Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><input type="text" class="dose" /></td><td><input type="text" class="response" /></td></tr>
+                    <tr><td><input type="text" class="dose" /></td><td><input type="text" class="response" /></td></tr>
+                    <tr><td><input type="text" class="dose" /></td><td><input type="text" class="response" /></td></tr>
+                </tbody>
+            </table>
+            <button id="add-row-group2" type="button">Add Row to Group 2</button>
+        </div>
+        <div id="transformation-container">
+            <h2>Transformation</h2>
+            <form id="transformation-form">
+                <label><input type="radio" name="transformation" value="none" checked> None</label>
+                <label><input type="radio" name="transformation" value="log"> Log</label>
+                <label><input type="radio" name="transformation" value="sqrt"> Sqrt</label>
+                <label><input type="radio" name="transformation" value="boxcox"> Box-Cox</label>
+                <label><input type="radio" name="transformation" value="logit"> Logit</label>
+            </form>
+        </div>
+    </div>
+    <div id="result"></div>
+    <div id="plots" class="grid-container"></div>
+    <div id="residuals-plot"></div>
+    <button id="submit-btn" type="button">Submit</button>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
